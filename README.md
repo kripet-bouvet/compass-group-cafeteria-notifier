@@ -7,6 +7,14 @@ It is called with three arguments: `phone`, `token` and `balanceLimit`. These ar
 > [!Tip]
 > I have set up the notifier to run every weekday at 10:00 using Windows Task Scheduler. This gives me time to top up the balance in time for lunch.
 
+## Simple install
+
+The following steps will set up a task that runs every week day at 10:00
+
+1. Download the release in the sidebar
+2. Extract it somewhere safe (I use C:/bin/Cafeteria Notifier)
+3. Run install.bat
+
 ## Building from source
 
 Simply run `dotnet publish` in the directory with the solution file.
@@ -27,7 +35,6 @@ To obtain the arguments `phone` and `token`, follow these steps:
 
 > [!NOTE]
 > The `token` does not seem to ever expire
-
 
 The `balanceLimit` argument is the limit where you want to start receiving notifications.
 
