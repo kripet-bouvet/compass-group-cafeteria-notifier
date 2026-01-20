@@ -46,8 +46,30 @@ internal static class Program
         }
 
         if (balance < balanceLimit)
-            CreateMessageBox($"Cafetria balance is low: {balance} kr");
+        {
+            ShowLowBalanceNotification(balance);
+        }
         return 0;
+    }
+
+    private static void ShowLowBalanceNotification(int balance)
+    {
+        var result = MessageBox.Show(
+                        $"Cafeteria balance is low: {balance} kr\n\nDo you want to top up your balance in your browser\n(Firefox not supported)?",
+                        "CafeteriaNotifier",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.ServiceNotification);
+
+        if (result == DialogResult.Yes)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://www.alreadyordered.no/compass9002/content/uncode-lite_child/TemplateProductTable_pure.php",
+                UseShellExecute = true
+            });
+        }
     }
 
     static (string phone, string token, int balanceLimit) ParseArgs(string[] args)
