@@ -9,6 +9,22 @@
 		<Version>1.2</Version>
 	</PropertyGroup>
 
+	<PropertyGroup> <!-- Publish settings -->
+		<Configuration>Release</Configuration>
+		<Platform>Any CPU</Platform>
+		<PublishDir>bin\Release\net9.0-windows\publish\</PublishDir>
+		<PublishProtocol>FileSystem</PublishProtocol>
+		<_TargetId>Folder</_TargetId>
+		<DebugType>None</DebugType>
+		<PublishSingleFile>True</PublishSingleFile>
+		<SelfContained>false</SelfContained>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<IncludeAllContentForSelfExtract>false</IncludeAllContentForSelfExtract>
+		<OutputType>WinExe</OutputType>
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<None Update="install.bat">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
