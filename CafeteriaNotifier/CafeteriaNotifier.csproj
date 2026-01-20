@@ -1,17 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>1.2</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Update="install.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="install.bat">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
+	<Target Name="ZipPublishFolder" AfterTargets="Publish">
+		<PropertyGroup>
+			<PublishZipFolder>$(SolutionDir)Publish\</PublishZipFolder>
+			<ZipFile>$(PublishZipFolder)$(AssemblyName)_v$(Version).zip</ZipFile>
+		</PropertyGroup>
+		<Message Importance="High" Text="ZipFile will be: $(ZipFile)" />
+		<MakeDir Directories="$(PublishZipFolder)" />
+		<Delete Files="$(ZipFile)" ContinueOnError="true" />
+		<ItemGroup>
+			<FilesToZip Include="$(PublishDir)**\*" />
+		</ItemGroup>
+		<Exec Command="powershell -NoProfile -Command &quot;Compress-Archive -Path '$(PublishDir)*' -DestinationPath '$(ZipFile)' -Force&quot;" />
+	</Target>
 </Project>
