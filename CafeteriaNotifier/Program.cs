@@ -53,7 +53,7 @@ internal static partial class Program
     private static void ShowLowBalanceNotification(int balance)
     {
         var result = MessageBox.Show(
-                        $"Cafeteria balance is low: {balance} kr\n\nDo you want to top up your balance in your browser\n(Firefox not supported)?",
+                        $"Cafeteria balance is low: {balance} kr\n\nDo you want to top up your balance in your browser?",
                         MessageBoxTitle,
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning,

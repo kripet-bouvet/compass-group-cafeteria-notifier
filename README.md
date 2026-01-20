@@ -2,7 +2,9 @@
 
 When run, this application shows a warning if the balance on your card is low. The application works with cards registered with Compass Group/alreadyordered.no
 
-It is called with three arguments: `phone`, `token` and `balanceLimit`. These arguments are explained in the arguments section.
+The warning dialog will allow the user to open up a web browser to top up the balance. As of January 2026, this web page does not work on Firefox.
+
+The executable is called with three arguments: `phone`, `token` and `balanceLimit`. These arguments are explained in the arguments section.
 
 > [!Tip]
 > I have set up the notifier to run every weekday at 10:00 using Windows Task Scheduler. This gives me time to top up the balance in time for lunch.
@@ -14,6 +16,10 @@ The following steps will set up a task that runs every week day at 10:00
 1. Download the release in the sidebar
 2. Extract it somewhere safe (I use C:/bin/Cafeteria Notifier)
 3. Run install.bat
+
+## Update
+
+Delete all files in the installed directory and copy the release zip into it. You do not need to rerun install.bat
 
 ## Building from source
 
