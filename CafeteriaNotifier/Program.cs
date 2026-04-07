@@ -4,8 +4,8 @@ namespace CafeteriaNotifier;
 
 internal static partial class Program
 {
-    const string BalanceUrl = "https://www.alreadyordered.no/compass9002/content/uncode-lite_child/TemplateProductTable_find_current_top_up_value.php";
-    const string TopUpUrl = "https://www.alreadyordered.no/compass9002/content/uncode-lite_child/TemplateProductTable_pure.php";
+    const string BalanceUrl = "https://www.alreadyordered.no/compass509002/content/uncode-lite_child/TemplateProductTable_find_current_top_up_value.php";
+    const string TopUpUrl = "https://www.alreadyordered.no/compass509002/content/uncode-lite_child/TemplateProductTable_pure.php";
     const string MessageBoxTitle = "CafeteriaNotifier";
 
     /// <summary>
