@@ -47,6 +47,8 @@ internal static partial class Program
         {
             ShowLowBalanceNotification(balance);
         }
+
+        await AutoUpdater.CheckAndApplyUpdateAsync();
         return 0;
     }
 
